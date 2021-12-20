@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  NAME: "joao"
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: exercicioVir
