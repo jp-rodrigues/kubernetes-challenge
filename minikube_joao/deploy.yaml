@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: minikube-joao
+  name: minikube-joao
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minikube-joao
+  template:
+    metadata:
+      labels:
+        app: minikube-joao
+    spec:
+      containers:
+      - image: minikube-joao:1.0
+        name: minikube-joao
+        resources: {}
+        env:
+        - name: NAME
+          valueFrom:
+            configMapKeyRef:
+              name: app-configmapkey
+              key: NAME
