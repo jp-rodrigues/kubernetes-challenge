@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: minikube-joao-serv
+  name: k8s-challenge-svc
+
+spec:
+  ports:
+  - protocol: TCP
+    port: 4000
+    targetPort: 4000
+  selector:
+    app: k8s-challenge-serv-app
